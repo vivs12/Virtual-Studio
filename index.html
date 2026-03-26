@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Vision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/luxury.css">
+  <link rel="icon" href="/downloads/vv-logo.jpeg" type="image/jpeg">
+</head>
+<body>
+  <div class="site-bg" aria-hidden="true"></div>
+
+<header>
+  <h1><a href="/"><img src="/downloads/vv-logo.jpeg" alt="Virtual Vision" class="site-logo" style="height:2em;vertical-align:middle;margin-right:0.4rem">Virtual Vision</a></h1>
+  <nav class="primary-nav">
+    <a href="#intro">Intro</a>
+    <a href="#about">Despre mine</a>
+    <a href="#projects">Proiecte</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Meniu" aria-expanded="false" aria-controls="mobileMenu">
+    <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect y="1" width="20" height="2" rx="1" fill="currentColor" />
+      <rect y="6" width="20" height="2" rx="1" fill="currentColor" />
+      <rect y="11" width="20" height="2" rx="1" fill="currentColor" />
+    </svg>
+  </button>
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <button class="mobile-close" aria-label="Închide meniul">×</button>
+    <a href="#intro">Intro</a>
+    <a href="#about">Despre mine</a>
+    <a href="#projects">Proiecte</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true"></div>
+</header>
+
+<!-- Creator hero removed; photo moved into intro hero visual -->
+
+  <section id="intro" class="intro">
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Viitorul brandului tău începe aici</h2>
+      <p class="muted">Acest portofoliu reflectă o abordare atentă a designului digital și a dezvoltării web. Fiecare proiect este construit cu atenție la detalii, estetică și coerență, rezultând experiențe online elegante și bine realizate.</p>
+      
+    </div>
+    <div class="hero-visual">
+      <img src="/downloads/creator.jpeg" alt="Creator" class="hero-creator-photo">
+    </div>
+  </div>
+</section>
+
+  <section id="services" class="services">
+  <h2 class="section-title">Servicii</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Design UI/UX</h3>
+      <p class="muted">Interfețe rafinate, prototipare și concept de brand.</p>
+    </div>
+    <div class="service-card">
+      <h3>Dezvoltare Front-end</h3>
+      <p class="muted">HTML, CSS, JavaScript moderne și optimizare a performanței.</p>
+    </div>
+    <div class="service-card">
+      <h3>Optimizare & Mentenanță</h3>
+      <p class="muted">Lansare, optimizare pentru motoare de căutare, monitorizare și actualizări regulate.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2 class="section-title">Despre mine</h2>
+  <p>Mă numesc Viviana și sunt studentă la Universitatea Maritimă din Constanța, specializarea Cybersecurity. Această pregătire academică îmi oferă o bază solidă în domeniul digital, iar pasiunea mea pentru dezvoltarea web s-a dezvoltat în paralel, devenind o componentă centrală a parcursului meu profesional.
+    Dezvoltarea web, în special pentru companii și afaceri mici, a început ca un hobby, dar a devenit rapid un interes real pentru crearea unor experiențe digitale coerente și elegante. Prin munca mea explorez designul și funcționalitatea web, experimentez cu diferite tehnologii și transform ideile în proiecte tangibile, cu impact vizual și utilitate practică.
+    Fiecare proiect pe care îl construiesc este realizat cu atenție la detalii, echilibrând estetica și funcționalitatea, astfel încât rezultatul final să fie mai mult decât un site: o experiență digitală completă. Îmi propun să combin creativitatea cu profesionalismul, făcând ca fiecare proiect să reprezinte clar și rafinat identitatea clientului.
+    Prin această pasiune urmăresc să îmi dezvolt competențele tehnice și vizuale și să construiesc un portofoliu care să reflecte calitatea muncii mele și dedicarea pentru excelență în design și dezvoltare web.</p>
+</section>
+
+<section id="projects" class="projects">
+  <h2 class="section-title">Proiecte</h2>
+  <div class="projects-grid">
+    <div class="project-card" data-title="Proiect: CrochetByVivs" data-desc="Magazin online pentru produse croșetate, pagini produse și coș de cumpărături." data-tech="HTML, CSS, JS">
+      <div class="project-snapshot">CrochetByVivs</div>
+      <h4>CrochetByVivs</h4>
+      <p class="muted">Prezentare pentru produse handmade, UX centrat pe produs.</p>
+      <div style="margin-top:.5rem">
+        <a class="btn" href="proiect2.html" style="margin-left:.5rem">Studiu de caz</a>
+      </div>
+    </div>
+    <div class="project-card" data-title="Proiect: TechWave" data-desc="Site pentru firmă tech cu prezentare servicii și studii de caz." data-tech="React, Node.js">
+      <div class="project-snapshot">TechWave</div>
+      <h4>TechWave</h4>
+      <p class="muted">Blog cu articole și studii de caz dedicate industriei tehnologice.</p>
+      <div style="margin-top:.5rem">
+        <a class="btn" href="proiect3.html" style="margin-left:.5rem">Studiu de caz</a>
+      </div>
+    </div>
+    <div class="project-card" data-title="Proiect: Cyber Security Awareness" data-desc="Site informativ despre conștientizarea securității cibernetice." data-tech="HTML, CSS">
+      <div class="project-snapshot">Cyber Security Awareness</div>
+      <h4>Cyber Security Awareness</h4>
+      <p class="muted">Resurse și ghiduri pentru creșterea conștientizării privind securitatea online.</p>
+      <div style="margin-top:.5rem">
+        <a class="btn" href="proiect4/index.html" style="margin-left:.5rem">Studiu de caz</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <h2 class="section-title">Testimoniale</h2>
+  <div class="testimonials-grid">
+    <blockquote>“Designul a ridicat brandul nostru la un nivel complet nou.” <cite class="muted">— Ana Popescu, CEO</cite></blockquote>
+    <blockquote>“Livrare rapidă, cod curat și atenție la detalii.” <cite class="muted">— Mihai Ionescu, CTO</cite></blockquote>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact</h2>
+  <p class="muted">Preferi rețelele sociale? Mă poți găsi aici:</p>
+  <div class="social-links" style="display:flex;gap:0.75rem;margin-top:1rem;align-items:center;flex-wrap:wrap">
+    <a class="btn" href="https://www.linkedin.com/in/viviana-vasilescu-267249390?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a class="btn" href="https://github.com/vivs12" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a class="btn" href="https://www.instagram.com/_vivs_12?igsh=Y2o2amh3eHN2N2Jw&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="btn" href="https://www.facebook.com/share/17C3BGHjwZ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
+  </div>
+  <p style="margin-top:0.75rem;color:var(--muted)">Sau trimite-mi un email la: <a href="mailto:vivianavasilescu415@yahoo.com" style="color:var(--gold);text-decoration:underline">vivianavasilescu415@yahoo.com</a></p>
+</section>
+
+<footer>
+  <p>© 2026 - Virtual Vision</p>
+</footer>
+
+<!-- Modal pentru detalii proiect -->
+<div id="projectModal" class="modal" aria-hidden="true">
+  <div class="modal-panel">
+    <button class="modal-close" aria-label="Închide">×</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc" class="muted"></p>
+    <p><strong>Tech:</strong> <span id="modalTech"></span></p>
+  </div>
+</div>
+
+<script>
+// Simple modal & form handler
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('[data-action="open-project"]');
+  if(btn){
+    var card = btn.closest('.project-card');
+    document.getElementById('modalTitle').textContent = card.dataset.title || '';
+    document.getElementById('modalDesc').textContent = card.dataset.desc || '';
+    document.getElementById('modalTech').textContent = card.dataset.tech || '';
+    document.getElementById('projectModal').setAttribute('aria-hidden','false');
+  }
+  if(e.target.closest('.modal-close') || e.target.id==='projectModal'){
+    document.getElementById('projectModal').setAttribute('aria-hidden','true');
+  }
+});
+
+function sendMessage(e){
+  e.preventDefault();
+  alert('Mesaj trimis — voi reveni în scurt timp.');
+  e.target.reset();
+}
+
+// Mobile nav toggle
+(function(){
+  var toggle = document.getElementById('navToggle');
+  if(!toggle) return;
+  var overlay = document.getElementById('mobileOverlay');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = mobileMenu ? mobileMenu.querySelector('.mobile-close') : null;
+
+  function closeMenu(){
+    var header = document.querySelector('header');
+    header.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded','false');
+    if(overlay){ overlay.setAttribute('aria-hidden','true'); }
+    if(mobileMenu){ mobileMenu.setAttribute('aria-hidden','true'); }
+  }
+
+  function openMenu(){
+    var header = document.querySelector('header');
+    header.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded','true');
+    if(overlay){ overlay.setAttribute('aria-hidden','false'); }
+    if(mobileMenu){ mobileMenu.setAttribute('aria-hidden','false');
+      var first = mobileMenu.querySelector('a'); if(first) first.focus();
+    }
+  }
+
+  toggle.addEventListener('click', function(){
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    if(expanded) closeMenu(); else openMenu();
+  });
+  // close nav when clicking a link inside mobile menu
+  document.querySelectorAll('#mobileMenu a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMenu(); });
+  });
+  // close when clicking overlay
+  if(overlay){ overlay.addEventListener('click', function(){ closeMenu(); }); }
+  // close when clicking close button
+  if(mobileClose){ mobileClose.addEventListener('click', function(){ closeMenu(); }); }
+  // close on Escape
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeMenu(); } });
+})();
+</script>
+</body>
+</html>

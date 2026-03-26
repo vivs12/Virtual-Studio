@@ -1,0 +1,283 @@
+:root{
+  --bg:#070707;
+  --surface:#0f0f0f;
+  --text:#e9e7e2;
+  --muted:#bdb7ae;
+  --green:#0b8f5a; /* emerald */
+  --gold:#d4af37;  /* classic gold */
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Creator photo size override (smaller) */
+.creator-photo{width:180px;height:120px;object-fit:cover;border-radius:10px;box-shadow:0 18px 36px rgba(0,0,0,0.6);border:3px solid rgba(212,175,55,0.10)}
+@media (max-width:900px){
+  .creator-photo{width:140px;height:96px}
+}
+
+/* Global */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:transparent;
+  color:var(--text);
+  font-family:'Poppins',system-ui,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+
+/* Headings use an elegant serif */
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--text);margin:0 0 0.5rem}
+
+/* Header / Nav (sticky) */
+header{display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px;background:rgba(0,0,0,0.45);backdrop-filter:blur(6px);position:fixed;top:0;left:0;right:0;z-index:70}
+header h1{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:700}
+header h1 a{color:var(--gold);text-decoration:none;display:inline-block}
+header h1 a:hover{text-decoration:underline}
+/* Logo in header */
+.site-logo{height:4rem;vertical-align:middle;margin-right:0.8rem;border-radius:4px;object-fit:contain;display:inline-block}
+.primary-nav{display:flex;gap:1rem;align-items:center}
+.primary-nav a{color:var(--muted);text-decoration:none;padding:0.25rem 0.5rem;border-radius:4px;transition:color .18s,background .18s;margin-left:0}
+.primary-nav a:hover{color:var(--gold);background:rgba(212,175,55,0.03)}
+
+/* Sections */
+section{padding:4rem 2rem}
+.section-title{position:relative;display:inline-block;margin-bottom:1rem;color:var(--text)}
+.section-title::after{content:'';display:block;height:3px;width:60px;background:linear-gradient(90deg,var(--gold),var(--green));margin-top:0.6rem;border-radius:2px}
+
+/* Intro */
+.intro{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-top:6rem;padding-bottom:6rem}
+.intro h2{font-size:2.6rem;color:var(--text)}
+.intro p{color:var(--muted);max-width:60ch}
+
+/* Cards / Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.project-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:1.5rem;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.6);
+  color:var(--text);
+}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;border:1px solid rgba(212,175,55,0.18);color:var(--gold);background:transparent;cursor:pointer;font-weight:600}
+.btn:hover{background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(11,143,90,0.03));color:var(--text)}
+
+/* Forms */
+input,textarea{width:100%;padding:0.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--surface);color:var(--text);outline:none}
+input:focus,textarea:focus{box-shadow:0 0 0 4px rgba(11,143,90,0.08);border-color:var(--green)}
+
+/* Footer */
+footer{padding:2rem;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* Utilities */
+.muted{color:var(--muted)}
+.accent{color:var(--gold)}
+
+@media (max-width:700px){
+  header{height:64px;padding:0 1rem}
+  body{padding-top:64px}
+  section{padding:2rem 1rem}
+}
+
+/* Small visual flourish for links */
+a{color:var(--gold)}
+
+/* Hero */
+.hero{display:flex;gap:2rem;align-items:center;justify-content:space-between;padding:2.5rem 0}
+.hero-content{max-width:55%;font-size:1.05rem;line-height:1.75;}
+.hero-visual{flex:1;display:flex;justify-content:center}
+.screen-mockup{width:520px;height:400px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+/* Creator image used in hero visual */
+.hero-creator-photo{width:980px;max-width:54%;height:auto;border-radius:12px;object-fit:cover;border:4px solid rgba(212,175,55,0.12);display:block}
+@media (max-width:1200px){
+  .hero-creator-photo{max-width:68%;width:520px}
+}
+@media (max-width:1000px){
+  .hero-creator-photo{max-width:72%;width:420px}
+}
+@media (max-width:700px){
+  .hero-creator-photo{max-width:100%;width:100%;height:auto}
+}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.service-card{background:var(--surface);padding:1.25rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Projects specifics */
+.project-snapshot{height:120px;border-radius:8px;background:linear-gradient(135deg, rgba(11,143,90,0.12), rgba(212,175,55,0.08));display:flex;align-items:center;justify-content:center;color:var(--text);margin-bottom:.75rem}
+.project-card h4{margin:0 0 .25rem}
+
+/* Testimonials */
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+blockquote{background:var(--surface);padding:1rem;border-radius:8px;border-left:4px solid var(--green);color:var(--text);margin:0}
+
+/* Modal styles */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:60;opacity:1;transition:opacity .2s}
+.modal[aria-hidden="true"]{opacity:0;pointer-events:none}
+.modal-panel{background:linear-gradient(180deg,var(--surface),#0b0b0b);padding:1.5rem;border-radius:12px;min-width:300px;max-width:720px;color:var(--text);box-shadow:0 20px 50px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.03)}
+.modal-close{background:transparent;border:0;color:var(--muted);font-size:1.6rem;position:absolute;right:1.25rem;top:1.25rem;cursor:pointer}
+
+/* Buttons refinements */
+.btn{padding:0.6rem 1rem;border-radius:8px;border:1px solid rgba(212,175,55,0.18);color:var(--gold);background:transparent;font-weight:600}
+
+/* Site background image with dark overlay */
+.site-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-color:#000;background-image:linear-gradient(rgba(0,0,0,0.86),rgba(0,0,0,0.86)), url('/downloads/bg-gold-green.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;}
+@media (max-width:900px){
+  .site-bg{background-image:linear-gradient(rgba(0,0,0,0.90),rgba(0,0,0,0.90)), url('/downloads/bg-gold-green.jpg')}
+}
+
+/* Ensure page content sits above the site background */
+.hero, main, section, footer{position:relative;z-index:1}
+
+/* Mobile navigation toggle and responsive tweaks */
+.nav-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+/* Ensure mobile menu is hidden by default on desktop */
+.mobile-menu{display:none}
+
+@media (max-width:700px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.35rem .6rem;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);z-index:85}
+  header{padding:0 1rem}
+  /* hide desktop nav on mobile (primary-nav is the desktop links) */
+  .primary-nav{display:none}
+  /* Slide-out mobile nav */
+  /* hide the desktop inline nav on small screens; use slide-out nav when opened */
+  nav{display:none}
+  nav.mobile{position:fixed}
+  /* Mobile panel anchored to top-right */
+  nav{display:none}
+  /* Mobile: full-height slide-in panel from the right (mobile-only) */
+  .mobile-menu{
+    position:fixed;top:0;right:0;height:100vh;width:86%;max-width:380px;
+    background:linear-gradient(180deg, rgba(6,7,6,0.92), rgba(8,9,8,0.96));
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    display:flex;flex-direction:column;align-items:stretch;gap:0.75rem;padding:3.2rem 1rem 1.2rem 1rem;z-index:1100;
+    transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.9,.2,1);box-shadow:-18px 24px 60px rgba(0,0,0,0.6);
+    border-left:1px solid rgba(255,255,255,0.03)
+  }
+  .mobile-menu a{font-size:1.15rem;color:var(--text);text-decoration:none;padding:.9rem 1rem;background:rgba(255,255,255,0.02);border-radius:10px;display:block}
+  .mobile-menu a:active{background:rgba(255,255,255,0.03)}
+  /* Add a subtle header inside the panel (uses existing markup if present) */
+  .mobile-menu .menu-header{display:flex;align-items:center;gap:.6rem;padding-bottom:.25rem;margin-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,0.02)}
+  .mobile-menu .menu-header .site-logo{height:1.6rem}
+  /* Footer area inside the panel for socials */
+  .mobile-menu .menu-footer{margin-top:auto;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+  /* Close button inside mobile panel */
+  .mobile-menu .mobile-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.03);border:0;color:var(--muted);font-size:1.1rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.45);transition:background .15s,transform .12s}
+  .mobile-menu .mobile-close:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
+  /* Show when open (slide in from right) */
+  header.nav-open .mobile-menu{transform:translateX(0)}
+  /* Stack hero on mobile */
+  .hero{flex-direction:column;align-items:stretch}
+  .hero-content{max-width:100%}
+  .hero-visual{order:2;margin-top:1rem}
+  .project-snapshot{height:96px}
+  /* Slightly reduce section padding on small screens */
+  section{padding:1.5rem 1rem}
+
+  /* Smaller site title and logo on mobile so it fits on one line */
+  /* Keep logo + title on a single line and leave space for the 3-line hamburger */
+  header{align-items:center}
+  header h1{font-size:2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;margin:0;padding-right:0.6rem}
+  header h1 .site-logo, header h1 img.site-logo{height:4rem;vertical-align:middle;margin-right:0.45rem;display:inline-block}
+  /* Ensure toggle sits to the right of the logo */
+  .nav-toggle{margin-left:auto}
+}
+
+.mobile-overlay{display:none;position:fixed;inset:0;z-index:900;opacity:0;transition:opacity .18s}
+header.nav-open .mobile-overlay{display:block;opacity:1}
+
+/* Ensure SVG toggle inherits color */
+.nav-toggle svg{color:var(--text);display:block}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

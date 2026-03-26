@@ -1,0 +1,386 @@
+:root{
+  /* paleta: crem, maro deschis, verde sage */
+  --cream: #FBF7EE;        /* background suav */
+  --light-brown: #C8A97E;  /* accent cald */
+  --brown: #8B6B4A;        /* text/accente */
+  --sage: #9AAE9A;         /* verde sage */
+  --text: #2b2b2b;
+  --muted: #6b6b6b;
+
+  --left-w: 36%; /* poți ajusta între 30-40% */
+  --gutter: 40px;
+  --max-width: 1200px;
+  --radius: 12px;
+  --shadow: 0 8px 28px rgba(18,25,40,0.06);
+  font-family: "Helvetica Neue", Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* Reset minim */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+
+/* Layout split */
+.split-layout{min-height:100vh;position:relative;max-width:var(--max-width);margin:0 auto;}
+
+/* ========================= */
+/* LEFT FIXED PANEL (Strata) */
+/* ========================= */
+
+.left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 35%;                /* 30–40% cum ai cerut */
+    height: 100vh;
+    background: url('img/bg.jpg') center/cover no-repeat;
+    background-color: #b8784d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    color: rgb(236, 227, 222);
+}
+
+/* container interior pentru centrare verticală */
+.left-inner {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* poza rotundă mică */
+.left-avatar {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.8);
+    margin-bottom: 120px;
+    margin-left: 310px;
+}
+
+/* titlu */
+.left .brand {
+    font-size: 3.6rem;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* descriere sub titlu */
+.left-desc {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 0 5px;
+    font-family: 'Gabriola';
+}
+
+/* RIGHT — conținut scrollabil */
+.right{
+  margin-left:var(--left-w);
+  width: calc(100% - var(--left-w));
+  padding-right: 48px 20px;
+  min-height:100vh;
+  background:transparent;
+  padding-top: 100px;
+}
+
+/* Hero header */
+.main-hero h1{
+  margin:0 0 12px 0;
+  font-size:clamp(1.4rem, 3vw, 2.4rem);
+  color:var(--brown);
+}
+
+.main-desc {
+  margin:0 0 10px;
+  color:var(--muted);
+  font-family: 'Gabriola';
+  font-size: 25px;
+  max-width: none;
+  width: 100%;
+}
+
+/* Recent Work grid */
+.recent-work{ margin-top:24px; }
+.recent-work h3{ margin:0 0 14px 0; font-size:1.1rem; color:var(--brown) }
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr); /* două pe rând */
+  gap:18px 18px;
+}
+
+/* Product card */
+.product{
+  background:#fff;
+  border-radius:10px;
+  padding:8px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.product img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+}
+.product figcaption{ padding:10px 8px 12px 8px; }
+.p-title{ font-weight:600; margin:0 0 6px 0; color:var(--brown) }
+.p-sub{ margin:0;color:var(--muted); font-size:0.95rem }
+
+/* Modal (CSS-only) */
+.modal{
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  display:none; /* hidden by default */
+  background:rgba(0,0,0,0.6);
+  z-index:999;
+  padding:48px;
+  overflow:auto;
+}
+.modal:target{ display:block; } /* când #modalX este țintit */
+.modal-panel{
+  max-width:1100px;
+  margin:40px auto;
+  background:var(--cream);
+  border-radius:12px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,0.04);
+}
+.modal-close{
+  float:right;
+  font-size:28px;
+  color:var(--brown);
+  text-decoration:none;
+  line-height:1;
+  margin-top:-6px;
+}
+.modal h4{ margin:0 0 14px 0; color:var(--brown) }
+
+/* galerie din modal: 3 imagini */
+.modal-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.modal-gallery img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+}
+
+/* ZOOM FULLSCREEN */
+.zoom-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+.zoom-modal:target {
+  display: flex;
+}
+
+.zoom-img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.zoom-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Buton de închidere */
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Get in touch */
+.contact-section{
+  margin:48px 0 18px 0;
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+}
+.contact-section h3{ margin:0 0 8px 0; color:var(--brown) }
+.contact-section p{ margin:0 0 12px 0; color:var(--muted) }
+
+.social-buttons{ display:flex; gap:12px; align-items:center }
+.social-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;height:44px;
+  border-radius:8px;
+  background:linear-gradient(180deg,var(--cream), #fff);
+  color:var(--brown);
+  border:1px solid rgba(0,0,0,0.04);
+  box-shadow:0 6px 18px rgba(139,107,74,0.06);
+}
+.social-btn svg{ display:block }
+
+/* Footer */
+.site-footer{ margin-top:28px; color:var(--muted); font-size:0.92rem }
+
+/* Responsive adjustments */
+@media (max-width:1100px){
+  :root{ --left-w:38% }
+  .modal-gallery img{ height:260px }
+}
+@media (max-width:900px){
+  /* pe ecrane mici trecem la layout stivuit */
+  .left{
+    position:relative;
+    width:100%;
+    height:260px;
+    padding:28px;
+    align-items:flex-end;
+  }
+  .left-inner{ max-width:100% }
+  .right{
+    margin-left:0;
+    padding:28px;
+  }
+  .grid{ grid-template-columns:repeat(2,1fr) }
+  .product img{ height:220px }
+}
+@media (max-width:600px){
+  .grid{ grid-template-columns:1fr } /* 1 pe rând pe mobil */
+  .product img{ height:200px }
+  .modal-panel{ padding:12px }
+  .modal-gallery{ grid-template-columns:1fr }
+  .modal-gallery img{ height:320px }
+  .left{ height:180px }
+}
+
+/* mică estetică: focus, hover */
+.thumb-link:focus img,
+.thumb-link:hover img{ transform:scale(1.02); transition:transform .28s ease }
+.thumb-link img{ transition:transform .28s ease; border-radius:8px }
+
+/* util: for accessibility (outline) */
+a:focus{ outline:3px solid color-mix(in srgb, var(--sage) 30%, transparent) ; outline-offset:3px }
+
+/* ======================= */
+/*  MOBILE RESPONSIVE MODE */
+/* ======================= */
+
+@media (max-width: 900px) {
+
+  /* Eliminăm layout-ul split și îl facem pe vertical */
+  .split-layout {
+    display: block;
+  }
+
+  /* Coloana stângă devine full width și nu mai e fixă */
+  .left {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .left-inner {
+    position: relative;
+    transform: none;
+  }
+
+  .left-avatar {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 15px;
+  }
+
+  .brand {
+    font-size: 2rem;
+  }
+
+  .left-desc {
+    text-align: center !important;
+    font-size: 1.3rem;
+    padding: 0 15px;
+  }
+
+  /* Conținutul din dreapta devine full width */
+  .right {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .main-hero h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .main-desc {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* GRID — se reduce la 1 sau 2 coloane pe telefon */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  /* Galerie — imaginile se aliniază mai frumos pe telefon */
+  .modal-gallery img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Zoom image full screen on mobile */
+  .zoom-img {
+    width: 95%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Contact section spacing */
+  .contact-section {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .social-buttons {
+    justify-content: center;
+  }
+}
